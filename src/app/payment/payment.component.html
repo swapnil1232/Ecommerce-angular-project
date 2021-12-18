@@ -1,0 +1,74 @@
+<div class="breadcrumb">
+    <div>
+        <div class="breadcrumb-inner">
+            <ul class="list-inline list-unstyled">
+                <li><a href="home.html">Home</a></li>
+                <li class='active'>Payment</li>
+            </ul>
+        </div><!-- /.breadcrumb-inner -->
+    </div><!-- /.container -->
+</div><!-- /.breadcrumb -->
+<div class="sign-in-page" style="margin: 0 50px 0 50px;">
+    <div class="row">
+        <!-- Sign-in -->
+        <div class="col-md-6 col-sm-6 sign-in">
+            <h4 class="">Address</h4>
+            <div class="col-md-12 col-sm-12 sign-in" style="display:inline;">
+                <h3>{{data.name}}</h3>
+                <h5>Phone : {{data.mobileno}}</h5>
+                <h5>Address : {{data.address}}</h5>
+                <h5>{{data.cityname}}, {{data.state}}.</h5>
+                <h5>Pin : {{data.pincode}}</h5>
+            </div>
+        </div>
+        <!-- Sign-in -->
+
+        <div class="col-md-5 col-sm-5 create-new-account" style="margin-left: 20px;">
+			<h3 class="checkout-subtitle">Shopping Cart</h3>
+			<p class="text title-tag-line"><br /></p>
+			<div class="row cart-shopping-total" style="padding:10px">
+				<div class="col-lg-12">
+					<table class="table mytable table-bordered">
+						<thead>
+							<tr>
+								<th>Product</th>
+								<th style='text-align:right;'>Total (&#8377;)
+								</th>
+							</tr>
+						</thead>
+						<tbody >
+							<tr class="table-bordered"  *ngFor="let product of products;let i = index;">
+								<td>{{product.name }} X {{ product.quantity }}</td>
+								<td style='text-align:right;padding:10px'>{{ product.billamount.toFixed(2) }}</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr class="table table-bordered">
+								<td style="padding:10px"><b>Subtotal</b></td>
+								<td style='text-align:right;padding:10px'><b>{{ data.billamount.toFixed(2) }}</b></td>
+							</tr>
+							<tr class="table-bordered">
+								<td style="padding:10px"><b>Shipping</b></td>
+								<td style='text-align:right;padding:10px'><b>
+										{{ data.shippingamount.toFixed(2) }}
+									</b>
+								</td>
+							</tr>
+							<tr class="table table-bordered">
+								<td style="padding:10px">
+									<h3>Total</h3>
+								</td>
+								<td style='text-align:right;padding:10px'>
+									<h3>
+										{{ data.totalbillamount.toFixed(2) }}
+									</h3>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+					<button class="btn btn-primary"  (click)="paynow()" type="submit"  style="float: right;">Pay Now</button>
+				</div>
+			</div>
+		</div>
+        </div><!-- /.row -->
+    </div>

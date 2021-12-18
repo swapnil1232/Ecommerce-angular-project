@@ -1,0 +1,68 @@
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <ul class="list-inline list-unstyled">
+        <li><a routerLink="../admin-dashboard">Home</a></li>
+        <li class="active">Product Category</li>
+      </ul>
+    </div>
+    <!-- /.breadcrumb-inner -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.breadcrumb -->
+
+<div class="body-content outer-top-xs">
+  <div class="container">
+    <div class="row ">
+      <div class="shopping-cart">
+        <div class="shopping-cart-table ">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>Product Category</h2>
+            </div>
+            <div class="col-lg-12">
+              <hr />
+            </div>
+          </div>
+
+            <div class="body-content">
+              <div class="container">
+                <div class="sign-in-page">
+                  <div class="row">
+                    <!-- Sign-in -->
+            <div class="col-md-6 col-sm-6 sign-in">
+
+              <form class="register-form outer-top-xs" role="form"  [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
+                <input type="hidden" formControlName="id" >
+                <div class="form-group">
+                    <label class="info-title">Name <span>*</span></label>
+                    <input type="text" class="form-control unicase-form-control text-input" formControlName="name" >
+                </div>
+                  <button type="submit" [disabled] = "!formdata.valid" class="btn btn-success">Save</button>
+                  &nbsp;
+                  <a class="btn btn-danger" routerLink="/admin-product-categories">Cancel</a>
+              </form>
+            </div>
+            <!-- Sign-in -->
+
+
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- /.shopping-cart -->
+    </div>
+    <!-- /.row -->
+    <!-- ============================================== BRANDS CAROUSEL ============================================== -->
+
+    <!-- /.logo-slider -->
+    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.body-content -->

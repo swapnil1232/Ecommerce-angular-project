@@ -1,0 +1,211 @@
+<header class="header-style-1">
+  <div class="top-bar animate-dropdown">
+    <div class="container">
+      <div class="header-top-inner">
+        <div class="cnt-account">
+          <div class="nav-bg-class">
+            <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
+              <div class="nav-outer">
+                <ul class="nav navbar-nav">
+                  <li class="dropdown"> <a routerLink="../myaccount">My Account</a> </li>
+                  <li class="dropdown"> <a routerLink="../cart">My Cart</a> </li>
+                  <li class="dropdown"> <a routerLink="../checkout">Checkout</a> </li>
+                  <li class="dropdown" *ngIf="isuser==false;"> <a routerLink="../userlogin">Login</a> </li>
+                  <li class="dropdown"  *ngIf="isuser;" class="dropdown-content "> <a class="dropdown-toggle"
+                      data-hover="dropdown" data-toggle="dropdown">{{username}}</a>
+                    <span *ngIf="isuser then usermenus;"></span>
+                    <ng-template #usermenus>
+
+                      <ul class="dropdown-menu pages">
+                        <li>
+                          <div class="yamm-content">
+                            <div class="row">
+                              <div class="col-xs-12 col-menu">
+                                <ul class="links">
+                                
+                                  <li><a routerLink="../myaccount">My Account</a></li><br>
+                                  <li><a routerLink="../logout">Logout</a></li>
+
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+
+                    </ng-template>
+                  </li>
+                 
+                </ul>
+                <!-- /.navbar-nav -->
+                <div class="clearfix"></div>
+              </div>
+              <!-- /.nav-outer -->
+            </div>
+            <!-- /.navbar-collapse -->
+
+          </div>
+        </div>
+        <!-- /.cnt-account -->
+
+        <div class="cnt-block">
+          <ul class="list-unstyled list-inline">
+            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
+                data-toggle="dropdown"><span class="value">USD </span><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">USD</a></li>
+                <li><a href="#">INR</a></li>
+                <li><a href="#">GBP</a></li>
+              </ul>
+            </li>
+            <li class="dropdown dropdown-small lang"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
+                data-toggle="dropdown"><span class="value">English </span><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">English</a></li>
+                <li><a href="#">French</a></li>
+                <li><a href="#">German</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- /.list-unstyled -->
+        </div>
+        <!-- /.cnt-cart -->
+        <div class="clearfix"></div>
+      </div>
+      <!-- /.header-top-inner -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.header-top -->
+  <!-- ============================================== TOP MENU : END ============================================== -->
+  <div class="main-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+          <!-- ============================================================= LOGO ============================================================= -->
+          <div class="logo"> <a href="home.html"> <img src="assets/images/logo.png" alt="logo"> </a> </div>
+          <!-- /.logo -->
+          <!-- ============================================================= LOGO : END ============================================================= -->
+        </div>
+        <!-- /.logo-holder -->
+
+        <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 top-search-holder">
+          <!-- /.contact-row -->
+          <!-- ============================================================= SEARCH AREA ============================================================= -->
+          <div class="search-area">
+            <form>
+              <div class="control-group">
+                <ul class="categories-filter animate-dropdown">
+                  <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">{{
+                      categoryname }} <b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li *ngFor="let pc of productcategories;" role="presentation"><a style="cursor: pointer;"
+                          (click)="linkClicked(categoryid, categoryname)" role="menuitem" tabindex="-1">-
+                          {{pc.name}}</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <input class="search-field" placeholder="Search here..." />
+                <a class="search-button" href="#"></a>
+              </div>
+            </form>
+          </div>
+          <!-- /.search-area -->
+          <!-- ============================================================= SEARCH AREA : END ============================================================= -->
+        </div>
+        <!-- /.top-search-holder -->
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 animate-dropdown top-cart-row">
+          <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
+
+          <div class="dropdown dropdown-cart"> <a routerLink="../cart" class="dropdown-toggle lnk-cart"
+              data-toggle="dropdown">
+              <div class="items-cart-inner">
+                <div class="basket">
+                  <div class="basket-item-count"><span class="count">{{ cartproductcount }}</span></div>
+                  <div class="total-price-basket"> <span class="lbl">Shopping Cart</span> </div>
+                </div>
+              </div>
+            </a>
+            <!-- /.dropdown-menu-->
+          </div>
+          <!-- /.dropdown-cart -->
+
+          <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= -->
+        </div>
+        <!-- /.top-cart-row -->
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+  </div>
+  <!-- /.main-header -->
+
+  <!-- ============================================== NAVBAR ============================================== -->
+  <div class="header-nav animate-dropdown">
+    <div class="container">
+      <div class="yamm navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed"
+            type="button">
+            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span> </button>
+        </div>
+        <div class="nav-bg-class">
+          <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
+            <div class="nav-outer">
+              <ul class="nav navbar-nav">
+                <li class="active dropdown"> <a routerLink="home">Home</a> </li>
+                <li class="dropdown" *ngFor="let pc of productcategories;"> <a href="../products/{{pc.id}}">{{
+                    pc.name }}</a> </li>
+                <span *ngIf="isadmin then adminmenus;"></span>
+                <ng-template #adminmenus>
+                  <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
+                      data-toggle="dropdown">Administration</a>
+                    <ul class="dropdown-menu pages">
+                      <li>
+                        <div class="yamm-content">
+                          <div class="row">
+                            <div class="col-xs-12 col-menu">
+                              <ul class="links">
+                                <li><a routerLink="admin-dashboard">Dashboard</a></li>
+                                <li><a routerLink="admin-product-categories">Product Categories</a></li>
+                                <li><a routerLink="admin-products">Products</a></li>
+                                <li><a routerLink="admin-orders">Orders</a></li>
+                                <li><a routerLink="admin-sliders">Sliders</a>
+                                <li><a routerLink="admin-testimonials">Testimonials</a></li>
+
+
+
+                                <li><a routerLink="logout">Logout</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ng-template>
+                <li class="dropdown  navbar-right special-menu"> <a href="#">Get 30% off on selected items</a> </li>
+              </ul>
+              <!-- /.navbar-nav -->
+              <div class="clearfix"></div>
+            </div>
+            <!-- /.nav-outer -->
+          </div>
+          <!-- /.navbar-collapse -->
+
+        </div>
+        <!-- /.nav-bg-class -->
+      </div>
+      <!-- /.navbar-default -->
+    </div>
+    <!-- /.container-class -->
+
+  </div>
+  <!-- /.header-nav -->
+  <!-- ============================================== NAVBAR : END ============================================== -->
+
+</header>

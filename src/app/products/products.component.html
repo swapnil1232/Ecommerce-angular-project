@@ -1,0 +1,50 @@
+<div class="search-result-container ">
+  <div id="myTabContent" class="tab-content category-list">
+    <div class="tab-pane active " id="grid-container">
+      <div class="category-product">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3" >
+            <div class="item">
+              <div class="products">
+                
+                  <div class="product" *ngFor="let product of products" >
+                    <span *ngIf="product.pcid == pcid then myproduct;"></span>
+                    <ng-template #myproduct>
+                    <div class="product-image" >
+                      <div class="image">
+                        <a routerLink= "../../productdetails/{{product.id}}">
+                          <img src="{{ baseurl + product.imagename }}" alt="">
+                        </a>
+                      </div>
+                      <!-- /.image -->
+                    </div>
+                    <!-- /.product-image -->
+  
+                    <div class="product-info text-left">
+                      <h3 class="name"><a routerLink= "../../productdetails/{{product.id}}">{{ product.name }}</a></h3>
+                      <div class="rating rateit-small"></div>
+                      <div class="description">{{ product.description }}</div>
+                      <div class="product-price"> <span class="price">{{ product.price }}  </span> <span
+                          class="price-before-discount"></span> </div>
+                      <!-- /.product-price -->
+  
+                    </div>
+                    <!-- /.product-info -->
+  
+                    <!-- /.cart -->
+                  </ng-template>
+                </div>
+                <!-- /.product -->
+
+              </div>
+              <!-- /.products -->
+            </div>
+          </div>
+          <!-- /.item -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.category-product -->
+
+    </div>
+    <!-- /.tab-pane -->

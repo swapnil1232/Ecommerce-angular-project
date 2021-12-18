@@ -1,0 +1,113 @@
+<div class="breadcrumb">
+	<div>
+		<div class="breadcrumb-inner" style="margin: 0 100px 20px 100px;">
+			<ul class="list-inline list-unstyled">
+				<li><a href="#">Home</a></li>
+				<li class='active'>Checkout</li>
+			</ul>
+		</div>
+		<!-- /.breadcrumb-inner -->
+	</div>
+	<!-- /.container -->
+</div>
+<div class="sign-in-page" style="margin: 0 25px 0 25px;">
+	<div class="row">
+		<!-- Sign-in -->
+		<div class="col-md-7 col-sm-7">
+			<div class="row">
+				<div class="col-lg-12 create-new-account">
+					<h3 class=""><b>Addresses</b></h3>
+				</div>
+			</div>
+			<div class="register-form outer-top-xs" role="" >
+				
+					
+					<div class="form-group col-sm-6 col-md-6">
+						<label class="info-title">Name <span style="color:red">*</span></label>
+						<input type="text" name="name"  [(ngModel)]="name" class="form-control " id="name" required >
+					</div>
+					<div class="form-group col-sm-6 col-md-6">
+						<label class="info-title">Mobile No. <span style="color:red">*</span></label>
+						<input type="text" id="phone" name="phone"  [(ngModel)]="mobileno" placeholder="mobile number" pattern="^\d{10}$"
+							title="10 digit mobile no" class="form-control  " required >
+					</div>
+
+					<div class="form-group col-md-12 col-sm-12">
+						<label class="info-title">Address <span style="color:red">*</span></label>
+						<input type="text" id="address" name="address" [(ngModel)]="address" placeholder="address line 1"
+							class="form-control " required  /><br />
+						<!-- <input type="text" id="address2" name="address2" placeholder="address line 2"
+							class="form-control " />
+						<input type="text" id="address3" name="address3" placeholder="address line 3"
+							style="width:100%; display:none;" /> -->
+					</div>
+					<div class="form-group col-md-6 col-sm-6">
+						<div class="field-label">Cityname <span style="color:red">*</span></div>
+						<input type="text" id="district" name="district"  [(ngModel)]="cityname" class="form-control  " placeholder=""
+							required  >
+					</div>
+
+					<div class="form-group col-md-6 col-sm-6">
+						<div class="field-label">State <span style="color:red">*</span></div>
+						<input type="text" id="state" name="state"  [(ngModel)]="state" id="state" class="form-control " required />
+					</div>
+
+					<div class="form-group col-md-12 col-sm-6">
+						<div class="field-label">Pin Code <span style="color:red">*</span></div>
+						<input type="text" id="pincode" name="pincode"  [(ngModel)]="pincode" class="form-control  " id="pincode" required />
+				
+					</div>
+				
+			</div>
+		</div>
+		<!-- Sign-in -->
+
+		<div class="col-md-5 col-sm-5 create-new-account">
+			<h3 class="checkout-subtitle"><b>Shopping Cart</b></h3>
+			<p class="text title-tag-line"><br /></p>
+			<div class="row cart-shopping-total" style="padding:10px">
+				<div class="col-lg-12">
+					<table class="table mytable table-bordered">
+						<thead>
+							<tr>
+								<th>Product</th>
+								<th style='text-align:right;'>Total (&#8377;)
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="table-bordered" *ngFor="let product of products;let i = index;">
+								<td>{{product.name }} x {{product.quantity }}</td>
+								<td style='text-align:right;padding:10px'>{{( product.price *
+									product.quantity).toFixed(2) }}</td>
+							</tr>
+							<tr class="table table-bordered">
+								<td style="padding:10px"><b>Subtotal</b></td>
+								<td style='text-align:right;padding:10px'><b>{{subtotal.toFixed(2)}}</b></td>
+							</tr>
+							<tr class="table-bordered">
+								<td style="padding:10px"><b>Shipping</b></td>
+								<td style='text-align:right;padding:10px'><b>
+										{{ shipping.toFixed(2) }}
+									</b>
+								</td>
+							</tr>
+							<tr class="table table-bordered">
+								<td style="padding:10px">
+									<h3>Total</h3>
+								</td>
+								<td style='text-align:right;padding:10px'>
+									<h3>
+										{{ total.toFixed(2) }}
+									</h3>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<button class="btn btn-primary" type="submit" (click)="placeorder()" style="float: right;">Place
+						Order</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

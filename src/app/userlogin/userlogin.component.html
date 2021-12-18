@@ -1,0 +1,65 @@
+<div class="breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <ul class="list-inline list-unstyled">
+                <li><a routerLink="home">Home</a></li>
+                <li class='active'>Sign-in</li>
+            </ul>
+        </div><!-- /.breadcrumb-inner -->
+    </div><!-- /.container -->
+</div><!-- /.breadcrumb -->
+
+<div class="body-content">
+    <div class="container">
+        <div class="sign-in-page" style="margin: 0 200px 0 200px;">
+            <div class="row">
+                <!-- Sign-in -->
+                <div class="col-md-6 col-sm-6 col-lg-10 sign-in">
+                    <h4 class="">Sign in</h4>
+                    <p class="">Hello, Welcome to your account.</p>
+                    <form class="register-form outer-top-xs" role="form" [formGroup]="formdata"
+                        (ngSubmit)="onClickSubmit(formdata.value)">
+                        <div class="form-group">
+                            <label class="info-title" >Email Address <span>*</span></label>
+                            <input type="email" class="form-control unicase-form-control text-input"
+                                formControlName="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" >Password <span>*</span></label>
+                            <input type="password" class="form-control unicase-form-control text-input"
+                                formControlName="password">
+                        </div>
+
+                        <button type="submit" [disabled]="!formdata.valid"
+                            class="btn-upper btn btn-danger checkout-page-button">Login</button>
+
+                        <a (click)="myFunction()" style="cursor:pointer;" class="forgot-password pull-right">Forgot your
+                            Password?</a>
+                    </form> <br><br><br>
+                    <div *ngIf="show then nomail else showmail"></div>
+                    <ng-template #showmail>
+                        <label class="info-title" for="exampleInputEmail1">Enter Your registered Email
+                            Address<span>*</span></label>
+                        <input type="email" [(ngModel)]="email" class="form-control unicase-form-control text-input"
+                            id="exampleInputEmail1">
+
+                        <br><br>
+                        <button type="button" class="btn-upper btn btn-danger checkout-page-button"
+                            (click)="sendpassword()">SUBMIT</button>
+                    </ng-template>
+                    <ng-template #nomail></ng-template>
+                    <br><br>
+                    <a class="btn-upper btn btn-primary btn-block checkout-page-button " style="background:#157ED2"
+                        routerLink="../createaccount">Create account</a>
+                </div>
+                <!-- Sign-in -->
+
+                <!-- create a new account -->
+
+                <!-- create a new account -->
+            </div><!-- /.row -->
+        </div><!-- /.sigin-in-->
+        
+        <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
+    </div><!-- /.container -->
+</div><!-- /.body-content -->

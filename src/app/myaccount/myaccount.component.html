@@ -1,0 +1,259 @@
+<div class="breadcrumb">
+	<div class="container">
+		<div class="breadcrumb-inner">
+			<ul class="list-inline list-unstyled">
+				<li><a href="#">Home</a></li>
+				<li class='active'>My account</li>
+			</ul>
+		</div><!-- /.breadcrumb-inner -->
+	</div><!-- /.container -->
+</div><!-- /.breadcrumb -->
+
+<div class="body-content">
+	<div class="container">
+		<div class="checkout-box ">
+			<div class="row">
+				<div class="col-xs-12 col-sm-9 col-md-9 rht-col">
+					<div class="panel-group checkout-steps" id="accordion">
+						<!-- checkout-step-01  -->
+						<div class="panel panel-default checkout-step-01">
+
+							<!-- panel-heading -->
+							<div class="panel-heading">
+								<h4 class="unicase-checkout-title">
+									<a data-toggle="collapse" class="" data-parent="#accordion" href="#collapseOne">
+										<span>1</span>my account
+									</a>
+								</h4>
+							</div>
+							<!-- panel-heading -->
+
+							<div id="collapseOne" class="panel-collapse collapse in">
+
+								<!-- panel-body  -->
+<!-- my account -->
+					<!-- my profile -->
+								<div class="panel-body">
+									<div class="panel-heading">
+										<h4 class="unicase-checkout-title">
+											<a data-toggle="collapse" class="collapsed" href="#collapseTwo">
+												<!-- <i class="fas fa-user-circle"></i> -->
+												<h5 style="text-transform: capitalize">My profile</h5>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse">
+										<div class="panel-body">
+											<form method="POST" role="form" [formGroup]="updatedata"
+											(ngSubmit)="onSubmit(updatedata.value)" class="register-form outer-top-xs">
+											<input  formControlName="id" >
+												<div class="row">
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label class="info-title" for="exampleInputEmail1">Name
+																<span>*</span></label>
+															<input type="text" name="name" id="name" value=""
+																class="form-control unicase-form-control text-input"
+																formControlName="name" >
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label class="info-title" for="exampleInputEmail2">Email
+																Address <span>*</span></label>
+															<input type="email" name="email" id="email" value=""
+																class="form-control unicase-form-control text-input"
+																formControlName="email" >
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label class="info-title" for="exampleInputEmail1">Phone
+																Number <span>*</span></label>
+															<input type="number" name="phone" id="phone" value=""
+																class="form-control unicase-form-control text-input"
+																formControlName="mobileno" >
+														</div>
+													</div>
+												</div>
+												<button type="submit" [disabled]="!updatedata.valid"
+													class="btn-upper btn btn-primary checkout-page-button">Update</button>
+											</form>
+										</div>
+
+									</div>
+
+					<!-- change password -->
+									<div class="panel-heading">
+										<h4 class="unicase-checkout-title">
+											<a data-toggle="collapse" class="collapsed" href="#collapsePass">&nbsp;
+												<h5 style="text-transform: capitalize">Change Password</h5>
+											</a>
+										</h4>
+									</div>
+									<div id="collapsePass" class="panel-collapse collapse">
+										<div class="panel-body">
+											<form method="POST" role="form"  [formGroup]="formdata"
+											(ngSubmit)="onClickSubmit(formdata.value)" class="register-form outer-top-xs">
+											<input type="hidden" formControlName="id" >
+											
+												<div class="row">
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label class="info-title" for="exampleInputEmail1">Enter
+																Old Password<span>*</span></label>
+															<input type="password" name="oldpass" id="oldpass"
+																class="form-control unicase-form-control text-input"
+																formControlName="password">
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label class="info-title" for="exampleInputEmail1">New
+																Password <span>*</span></label>
+															<input type="password" name="newpass" id="newpass" value=""
+																class="form-control unicase-form-control text-input" formControlName="password"
+																formControlName="newpassword">
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label class="info-title" for="exampleInputEmail2">Re
+																Enter New Password <span>*</span></label>
+															<input type="password" name="rnewpass" id="rnewpass"
+																value=""
+																class="form-control unicase-form-control text-input"
+																formControlName="confirmnewpassword">
+														</div>
+													</div>
+												</div>
+												<button type="submit"  [disabled]="!formdata.valid"
+													class="btn-upper btn btn-primary checkout-page-button"
+													>Change Password</button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<!-- panel-body  -->
+
+							</div><!-- row -->
+						</div>
+						<!-- checkout-step-01  -->
+<!-- Delivery address -->
+
+						<!-- checkout-step-02  -->
+						<div class="panel panel-default checkout-step-03">
+							<div class="panel-heading">
+								<h4 class="unicase-checkout-title">
+									<a data-toggle="collapse" class="collapsed" data-parent="#accordion"
+										href="#collapseThree">
+										<span>2</span>Delivery address
+									</a>
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="panel-body">
+										<table class="table table-bordered table-stripped">
+											<thead>
+											  <tr>
+												<th>No.</th>
+                                                <th>Name</th>
+                                                <th>Address</th>
+                                                <th>District</th>
+                                                <th>State</th>
+                                                <th>Pincode</th>
+											  </tr>
+											</thead>
+											<tbody>
+											  
+											</tbody>
+											<!-- /tbody -->
+										  </table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- checkout-step-02  -->
+
+
+<!-- Delivery address -->
+						<!-- checkout-step-03  -->
+						<div class="panel panel-default checkout-step-05">
+							<div class="panel-heading">
+								<h4 class="unicase-checkout-title">
+									<a data-toggle="collapse" class="collapsed" data-parent="#accordion"
+										href="#collapseFive">
+										<span>3</span>Coupon and Gift cards
+									</a>
+								</h4>
+							</div>
+							<div id="collapseFive" class="panel-collapse collapse">
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+									exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+									irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+									pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+									deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+									ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+						<!-- checkout-step-03  -->
+
+<!-- Delivery address -->
+						<!-- checkout-step-04  -->
+						<div class="panel panel-default checkout-step-06">
+							<div class="panel-heading">
+								<h4 class="unicase-checkout-title">
+									<a data-toggle="collapse" class="collapsed" data-parent="#accordion"
+										href="#collapseSix">
+										<span>4</span>Order Review
+									</a>
+								</h4>
+							</div>
+							<div id="collapseSix" class="panel-collapse collapse">
+								<div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+									exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+									irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+									pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+									deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+									ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+						<!-- checkout-step-04  -->
+
+					</div><!-- /.checkout-steps -->
+				</div>
+				<div class="col-xs-12 col-sm-3 col-md-3 sidebar">
+					<!-- checkout-progress-sidebar -->
+					<div class="checkout-progress-sidebar ">
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="unicase-checkout-title">Your Checkout Progress</h4>
+								</div>
+								<div class="">
+									<ul class="nav nav-checkout-progress list-unstyled">
+										<li><a href="#">Billing Address</a></li>
+										<li><a href="#">Shipping Address</a></li>
+										<li><a href="#">Shipping Method</a></li>
+										<li><a href="#">Payment Method</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

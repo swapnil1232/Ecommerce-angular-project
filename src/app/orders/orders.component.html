@@ -1,0 +1,181 @@
+<div class="body-content outer-top-xs">
+    <div class="container" style="margin: 0 15px 0 15px;">
+      <div class="row ">
+        <div class="shopping-cart">
+          <div class="shopping-cart-table ">
+            <div class="row">
+              <div class="container">
+  
+                <ul class="nav nav-pills nav nav-tabs nav-justified">
+                  <li class="active"><a data-toggle="pill" href="#order"
+                      style="height: 55px;font-size: medium;"><b>Orders</b></a></li>
+                  <li><a data-toggle="pill" href="#pending" style="height: 55px; font-size: medium;"><b>Pending</b></a></li>
+                  <li><a data-toggle="pill" href="#closed" style="height: 55px; font-size: medium;"><b>Closed</b></a></li>
+                  <li><a data-toggle="pill" href="#unpaid" style="height: 55px; font-size: medium;"><b>Unpaid</b></a></li>
+                </ul>
+                <br>
+  
+                <!-- ORDERS TAB OPEN -->
+                <div class="tab-content" style="margin: 0 0px 0 -20px;">
+                  <div id="order" class="tab-pane fade in active">
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-stripped">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Order Date</th>
+                            <th>Name</th>
+                            <th>Bill Amount</th>
+                            <th>Paymentstatus</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                       <tbody>
+                        <tr *ngFor="let p of data;let i = index;">
+                          <!-- <td>
+                            <a routerLink="../admin-product/{{ p.id }}">Edit</a>&nbsp;
+                            <a style="cursor: pointer;" (click)="deleteproduct(p.id)">Delete</a>
+                          </td> -->
+                          <td style="text-align:center;">{{ (i + 1) }}</td>
+                          <td style="text-align:center;">{{ p.orderdate }}</td>
+                          <td style="text-align:center;">{{ p.name }}</td>
+                          <td style="text-align:center;">{{ p.billamount }}</td>
+                          <td style="text-align:center;">{{ p.paymentstatus }}</td>
+                          <td  style="text-align:center;">
+                            <button type="button" class="btn btn-primary" (click)="printPage()">Print</button> &nbsp;
+                            <button type="button" class="btn btn-danger">close</button>
+                           </td>
+                         
+                        </tr>
+                      </tbody> 
+                        <!-- /tbody -->
+                      </table>
+                      <!-- /table -->
+                    </div>
+                  </div>
+                   <!-- ORDERS TAB CLOSE-->
+  
+                  <!-- PENDING TAB OPEN-->
+  
+                  <div id="pending" class="tab-pane fade">
+                    <div id="home" class="tab-pane fade in active">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-stripped">
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>Order Date</th>
+                              <th>Name</th>
+                              <th>Bill Amount</th>
+                              <th>Status</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <!-- <tbody>
+                          <tr *ngFor="let p of data;let i = index;">
+                            <td>
+                              <a routerLink="../admin-product/{{ p.id }}">Edit</a>&nbsp;
+                              <a style="cursor: pointer;" (click)="deleteproduct(p.id)">Delete</a>
+                            </td>
+                            <td  style="text-align:center;">{{ (i + 1) }}</td>
+                            <td  style="text-align:center;"><img src="{{ baseurl + p.imagename }}" style="height:50px; width:auto;" /></td>
+                            <td style="text-align:center;">{{ p.name }}</td>
+                            <td  style="text-align:center;">{{ p.mrp }}</td>
+                            <td  style="text-align:center;">{{ p.price }}</td>
+                            <td  style="text-align:center;">{{ p.availability }}</td>
+                          </tr>
+                        </tbody> -->
+                          <!-- /tbody -->
+                        </table>
+                        <!-- /table -->
+                      </div>
+                    </div>
+                  </div>
+                   <!-- PENDING TAB CLOSE-->
+                  
+                  <!-- CLOSED TAB OPEN -->
+                  <div id="closed" class="tab-pane fade">
+                    <div id="home" class="tab-pane fade in active">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-stripped">
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>Order Date</th>
+                              <th>Name</th>
+                              <th>Bill Amount</th>
+                              <th>Status</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <!-- <tbody>
+                          <tr *ngFor="let p of data;let i = index;">
+                            <td>
+                              <a routerLink="../admin-product/{{ p.id }}">Edit</a>&nbsp;
+                              <a style="cursor: pointer;" (click)="deleteproduct(p.id)">Delete</a>
+                            </td>
+                            <td  style="text-align:center;">{{ (i + 1) }}</td>
+                            <td  style="text-align:center;"><img src="{{ baseurl + p.imagename }}" style="height:50px; width:auto;" /></td>
+                            <td style="text-align:center;">{{ p.name }}</td>
+                            <td  style="text-align:center;">{{ p.mrp }}</td>
+                            <td  style="text-align:center;">{{ p.price }}</td>
+                            <td  style="text-align:center;">{{ p.availability }}</td>
+                          </tr>
+                        </tbody> -->
+                          <!-- /tbody -->
+                        </table>
+                        <!-- /table -->
+                      </div>
+                    </div>
+                  </div>
+                   <!-- CLOSED TAB CLOSE-->
+  
+                  <!-- UNPAID TAB OPEN-->
+                  <div id="unpaid" class="tab-pane fade">
+                    <div id="home" class="tab-pane fade in active">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-stripped">
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>Order Date</th>
+                              <th>Name</th>
+                              <th>Bill Amount</th>
+                              <th>Status</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <!-- <tbody>
+                          <tr *ngFor="let p of data;let i = index;">
+                            <td>
+                              <a routerLink="../admin-product/{{ p.id }}">Edit</a>&nbsp;
+                              <a style="cursor: pointer;" (click)="deleteproduct(p.id)">Delete</a>
+                            </td>
+                            <td  style="text-align:center;">{{ (i + 1) }}</td>
+                            <td  style="text-align:center;"><img src="{{ baseurl + p.imagename }}" style="height:50px; width:auto;" /></td>
+                            <td style="text-align:center;">{{ p.name }}</td>
+                            <td  style="text-align:center;">{{ p.mrp }}</td>
+                            <td  style="text-align:center;">{{ p.price }}</td>
+                            <td  style="text-align:center;">{{ p.availability }}</td>
+                          </tr>
+                        </tbody> -->
+                          <!-- /tbody -->
+                        </table>
+                        <!-- /table -->
+                      </div>
+                    </div>
+                  </div>
+                   <!-- UNPAID TAB CLOSE-->
+                </div>
+              </div>
+            </div>
+            <!-- /.shopping-cart -->
+          </div>
+          <!-- /.row -->
+          <!-- ============================================== BRANDS CAROUSEL ============================================== -->
+  
+          <!-- /.logo-slider -->
+          <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
+        </div>
+        <!-- /.container -->
+      </div>
